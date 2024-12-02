@@ -1,0 +1,17 @@
+<h1>Books List</h1>
+@if (books.length>0) {
+  <ul>
+    <li *ngFor="let book of books">
+      <input type="checkbox" [checked]="book.isRead"  (change)="toggleReadStatus(book)" >
+      <strong>{{ book.name }}</strong>
+      {{book.isRead ?'Already Read' : 'Unread'}}
+
+    </li>
+  </ul>
+
+}
+
+@else {
+  <p class="emptyListMsg">Your Books' List is empty!</p>
+}
+
